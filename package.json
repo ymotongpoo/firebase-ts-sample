@@ -1,0 +1,39 @@
+{
+    "name": "tabtimer",
+    "version": "0.0.1",
+    "description": "measure opened time for each tabs",
+    "main": "content-script.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "gulp minify"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ymotongpoo/tabtimer.git"
+    },
+    "keywords": [
+        "chrome",
+        "tabs"
+    ],
+    "author": "Yoshi Yamaguchi (ymotongpoo)",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/ymotongpoo/tabtimer/issues"
+    },
+    "homepage": "https://github.com/ymotongpoo/tabtimer#readme",
+    "devDependencies": {
+        "@types/node": "^6.0.31",
+        "browserify": "^13.1.0",
+        "del": "^2.2.1",
+        "eslint": "^3.2.2",
+        "firebase": "^3.2.1",
+        "gulp": "^3.9.1",
+        "gulp-jsmin": "^0.1.5",
+        "tsify": "^1.0.3",
+        "typescript": "^2.0.0",
+        "vinyl-source-stream": "^1.1.0"
+    },
+    "dependencies": {
+        "browserify": "^13.1.0"
+    }
+}
