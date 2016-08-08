@@ -14,16 +14,13 @@
 
 // This sample is TypeScript ported version of https://github.com/firebase/quickstart-js.
 
-/// <reference path="../../../node_modules/firebase/app.d.ts" />
-/// <reference path="../../../node_modules/firebase/firebase.d.ts" />
-
 import * as firebase from 'firebase';
 
 const config = {
     apiKey: "<apiKey>",
     authDomain: "<domain>",
     databaseURL: "<database URL>",
-    storageBucket: "<storage bucket>"
+    storageBucket: "<storage bucket>",
 };
 
 firebase.initializeApp(config);
@@ -34,10 +31,10 @@ function toggleSignIn() {
     if (firebase.auth().currentUser) {
         firebase.auth().signOut();
     } else {
-        const email = (<HTMLInputElement>document.getElementById('email')).value;
+        const email = (document.getElementById('email') as HTMLInputElement).value;
         const password = (<HTMLInputElement>document.getElementById('password')).value;
         firebase.auth().createUserWithEmailAndPassword(email, password)
-        .catch((e) => {
+        .catch((e: firebase.FirebaseError) => {
             const code = e.code;
             const message = e.message;
 
@@ -67,7 +64,7 @@ function handleSignUp() {
         return;
     }
     firebase.auth().createUserWithEmailAndPassword(email, password)
-    .catch((e) => {
+    .catch((e: firebase.FirebaseError) => {
         const code = e.code;
         const message = e.message;
         switch (code) {
